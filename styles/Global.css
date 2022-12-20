@@ -1,0 +1,464 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  /*--------------------上層橫幅區域-------------------*/
+  width: 100%;
+  height: 50vh;
+  position: relative;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.header .background {
+  /*整體-背景設定 */
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: -1;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../assets/img/Caesar_logo/caesar_background.jpg");
+  background-position: center;
+  background-size: 100%;
+}
+.header .MainPageLogo {
+  /*--------------------橫幅-LOGO設定-----------------*/
+  width: 200px;
+}
+.header nav {
+  /*--------------------橫幅排版-----------------*/
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .nav-links {
+  /*--------------------橫幅-右上排版-----------------*/
+  flex: 1;
+  text-align: right;
+}
+.header .nav-links ul li {
+  /*--------------------橫幅-右上標題設定-----------------*/
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.header .nav-links ul li::after {
+  /*--------------------橫幅-右上標題變化設定-----------------*/
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #04e1f5;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.header .nav-links ul li:hover::after {
+  width: 100%;
+}
+.header .nav-links ul li a {
+  /*--------------------橫幅-右上連結設定-----------------*/
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+.header :is(nav, .nav-links) .fa-solid {
+  /*側邊橫幅*/
+  display: none;
+}
+
+.news {
+  /* 整體字體排版設定 */
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.news h1 {
+  /* 標題字體設定 */
+  padding-bottom: 20px;
+  font-size: 36px;
+  font-weight: 300;
+}
+.news .fb-page {
+  border: 4px solid blue;
+  border-radius: 4px;
+}
+
+.today_food {
+  /* 整體字體排版設定 */
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 50px;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.today_food h1 {
+  /* 標題字體設定 */
+  font-size: 36px;
+  font-weight: 300;
+}
+.today_food p {
+  color: #777;
+  font-size: 20px;
+  font-weight: 100;
+  line-height: 22px;
+  padding: 10px;
+}
+.today_food .row {
+  /* food 四個版面排版設定 */
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.today_food .row .food-plate {
+  /* food 四個版面 位置及面板設定 */
+  flex-basis: 50%;
+  border-radius: 10px;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.today_food .row .food-plate img {
+  /* 面板圖片設定 */
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.today_food .row .food-plate .layer-1 {
+  /*  面板展示圖層設定  */
+  /*  面板展示圖層設定  */
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.today_food .row .food-plate .layer-1:hover {
+  /* 面板後顯示圖層顏色設定 */
+  background: rgba(226, 0, 0, 0.7);
+}
+.today_food .row .food-plate .layer-1:hover h3 {
+  /* 最左展示字體  移動設定 */
+  transform: translateX(-50%);
+  opacity: 1;
+}
+.today_food .row .food-plate .layer-1 ul li {
+  /* 面板內字體間距設定 */
+  padding-top: 130px;
+}
+.today_food .row .food-plate .layer-1 ul li h3 {
+  /* ----------- 面板1   最左面板展示字體設定 --------------- */
+  width: 100%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  left: 50%;
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(-200%);
+}
+.today_food .row .food-plate .layer-2 {
+  /*  面板展示圖層設定  */
+  /*  面板展示圖層設定  */
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.today_food .row .food-plate .layer-2:hover {
+  /* 面板後顯示圖層顏色設定 */
+  background: rgba(244, 48, 126, 0.7);
+}
+.today_food .row .food-plate .layer-2:hover h3 {
+  /* 中面板展示字體  移動設定 */
+  transform: translateX(-50%);
+  opacity: 1;
+}
+.today_food .row .food-plate .layer-2 ul li {
+  /* 面板內字體間距設定 */
+  padding-top: 130px;
+}
+.today_food .row .food-plate .layer-2 ul li h3 {
+  /* ----------- 面板2   中間面板展示字體設定 -------------- */
+  width: 100%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  left: 50%;
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translate(-50%, -700%);
+}
+.today_food .row .food-plate .layer-3 {
+  /*  面板展示圖層設定  */
+  /*  面板展示圖層設定  */
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.today_food .row .food-plate .layer-3:hover {
+  /* 面板後顯示圖層顏色設定 */
+  background: rgba(4, 12, 133, 0.7);
+}
+.today_food .row .food-plate .layer-3:hover h3 {
+  /* 中面板展示字體  移動設定 */
+  transform: translateX(-50%);
+  opacity: 1;
+}
+.today_food .row .food-plate .layer-3 ul li {
+  /* 面板內字體間距設定 */
+  padding-top: 130px;
+}
+.today_food .row .food-plate .layer-3 ul li h3 {
+  /* ----------- 面板2   中間面板展示字體設定 -------------- */
+  width: 100%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  left: 50%;
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translate(-50%, 700%);
+}
+.today_food .row .food-plate .layer-4 {
+  /*  面板展示圖層設定  */
+  /*  面板展示圖層設定  */
+  background: transparent;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+.today_food .row .food-plate .layer-4:hover {
+  /* 面板後顯示圖層顏色設定 */
+  background: rgba(18, 125, 2, 0.7);
+}
+.today_food .row .food-plate .layer-4:hover h3 {
+  /* 最右展示字體  移動設定 */
+  transform: translateX(-50%);
+  opacity: 1;
+}
+.today_food .row .food-plate .layer-4 ul li {
+  /* 面板內字體間距設定 */
+  padding-top: 130px;
+}
+.today_food .row .food-plate .layer-4 ul li h3 {
+  width: 100%;
+  font-weight: 500;
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  left: 50%;
+  position: absolute;
+  opacity: 0;
+  transition: 0.5s;
+  transform: translateX(200%);
+}
+
+.sub-header {
+  /*--------------------上層橫幅區域-------------------*/
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  font-family: "Noto Sans TC", sans-serif;
+}
+.sub-header .background {
+  /*整體-背景設定 */
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: -1;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(/image/Caesar_logo/caesar_background.jpg);
+  background-position: center;
+  background-size: cover;
+}
+.sub-header .MainPageLogo {
+  /*--------------------橫幅-LOGO設定-----------------*/
+  width: 100px;
+}
+.sub-header nav {
+  /*--------------------橫幅排版-----------------*/
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+.sub-header .nav-links {
+  /*--------------------橫幅-右上排版-----------------*/
+  flex: 1;
+  text-align: right;
+}
+.sub-header .nav-links ul li {
+  /*--------------------橫幅-右上標題設定-----------------*/
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+.sub-header .nav-links ul li::after {
+  /*--------------------橫幅-右上標題變化設定-----------------*/
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #04e1f5;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+.sub-header .nav-links ul li:hover::after {
+  width: 100%;
+}
+.sub-header .nav-links ul li a {
+  /*--------------------橫幅-右上連結設定-----------------*/
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+}
+.sub-header .nav-links i {
+  /*側邊橫幅*/
+  display: none;
+}
+
+.location {
+  /* ---------------Google map------------ */
+  width: 80%;
+  margin: auto;
+  padding: 80px 0;
+}
+.location iframe {
+  width: 100%;
+}
+
+.contact {
+  /* ---------------------Contact------------------- */
+  width: 80%;
+  margin: auto;
+}
+.contact .row {
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+.contact .row .sub-right {
+  flex-basis: 48%;
+  margin-bottom: 30px;
+  flex-grow: 0.5;
+}
+.contact .row .sub-right div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.contact .row .sub-right div .fa {
+  font-size: 30px;
+  color: #2064e3;
+  margin: 10px;
+  margin-right: 30px;
+}
+.contact .row .sub-right div p {
+  padding: 0;
+  color: #555;
+}
+.contact .row .sub-right div h5 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: rgb(42, 41, 41);
+  font-weight: 400;
+}
+.contact .row .sub-right a {
+  text-decoration: none;
+}
+.contact .row .sub-right img {
+  width: 200px;
+}
+.contact .row .contact-plate {
+  flex-basis: 48%;
+  margin-bottom: 30px;
+  flex-grow: 0.5;
+}
+.contact .row .contact-plate div {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.contact .row .contact-plate div .fa {
+  font-size: 30px;
+  color: #2064e3;
+  margin: 10px;
+  margin-right: 30px;
+}
+.contact .row .contact-plate div p {
+  padding: 0;
+  color: #555;
+}
+.contact .row .contact-plate div h5 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: rgb(42, 41, 41);
+  font-weight: 400;
+}
+
+.footer {
+  /* -------------------------Footer--------------------------- */
+  width: 100%;
+  text-align: center;
+  padding: 30px 0;
+  background: #263132;
+  color: #fff;
+  font-family: "Anek Telugu", sans-serif;
+}
+.footer h4 {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+.footer p {
+  line-height: 1.5;
+}
+.footer .icons {
+  margin: 0 13px;
+  cursor: pointer;
+  padding: 18px 0;
+  font-size: 50px;
+}
+.footer .icons .fa-facebook {
+  color: #2b48ff;
+  margin: 0 13px;
+}
+.footer .icons .fa-line {
+  color: rgb(21, 184, 21);
+  margin: 0 13px;
+}
+.footer .icons .fa-google {
+  color: red;
+  margin: 0 13px;
+}/*# sourceMappingURL=Global.css.map */
