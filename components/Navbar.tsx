@@ -38,8 +38,8 @@ export default function Navbar () {
                     <ul>
                         <li><Link href="/">首頁</Link></li>
                         <li><Link href="/Menu">本店菜單</Link></li>
-                        <li><Link href="/OnlineSelling">網購商品</Link></li>
-                        <li><Link href="/ContactPage">地址資訊</Link></li>
+                        <li><Link href="/Online">網購商品</Link></li>
+                        <li><Link href="/Contact">地址資訊</Link></li>
                     </ul>
                 </div>
                 <button className="fa-solid fa-bars" onClick={() => console.log("showMenu")}>

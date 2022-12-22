@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faFacebookF, faLine, faGoogle } from '@fortawesome/free-brands-svg-icons'
+import { faCopyright } from '@fortawesome/free-regular-svg-icons'
 
 export default function Footer () {
     return (
@@ -21,7 +22,8 @@ export default function Footer () {
                     title="https://goo.gl/maps/6nACEXLDpVRuer2K7"  icon={faGoogle} />
             </Link>
         </div>
-        <p><i className="fa-regular fa-copyright"></i> 2022 凱薩西餐牛排 Caesar Steaks. All rights reserved.</p>
+        <p><FontAwesomeIcon className="fa-regular fa-copyright"
+                    icon={ faCopyright } /> 2022 凱薩西餐牛排 Caesar Steaks. All rights reserved.</p>
         <p>Created by Wilson Shean.</p>
     </section>
     )
