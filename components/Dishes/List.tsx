@@ -1,27 +1,23 @@
 import Item from './Item'
-
-interface dataProps {
-    dishData:string[];
-}
+import { DishesListProps, popOutModalProps } from '../../pages/Menu/index';
 
 
 
-const List = ({ dishData }:dataProps) => {
+
+const List = ({dishes, popOutModal}: DishesListProps & popOutModalProps) => {
     return ( 
         <div className="list">
-            {dishData.map((item:string) => {
-                const { id, name, price_noon, price_night, img } = item ;
-                return (
-                    <Item 
-                    key={id}
-                    id={id}
-                    name={name}
-                    price_noon={price_noon}
-                    price_night={price_night}
-                    img={img}
-                    />
-                );
-            })}
+            {dishes.map(({ id, name, price_noon, price_night, img }) => (
+                <Item
+                key={id} 
+                name={name} 
+                id={id} 
+                price_noon={price_noon} 
+                price_night={price_night} 
+                img={img}
+                popOutModal={popOutModal}
+                /> 
+            ))}
         </div>
     );
 };

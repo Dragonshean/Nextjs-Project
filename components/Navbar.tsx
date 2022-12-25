@@ -23,6 +23,7 @@ export default function Navbar () {
             <nav>
                 <Link href="/">
                 <Image alt="Logo"
+                    priority={true}
                     src={logo}
                     width={120}
                     height={120}
