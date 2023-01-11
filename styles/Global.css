@@ -307,7 +307,7 @@
   background-color: #000811;
 }
 .dishes-plate .left-bar h3 {
-  width: 100%;
+  width: 90%;
   text-align: center;
   font-size: 20px;
   padding: 10px;
@@ -362,25 +362,68 @@
   grid-auto-rows: 200px;
 }
 .dishes-plate .right-bar .dishes-container .list .item {
+  border: 1px solid #555;
   border-radius: 10px;
-  background-color: #04e1f5;
+  background-color: #202627;
 }
 .dishes-plate .right-bar .dishes-container .list .item .item-image {
+  border: 1px solid #555;
+  margin: 2px 2px 0 2px;
   border-radius: 10px 10px 0 0;
-  background-color: #929894;
+  background-color: #c2d2c7;
 }
 .dishes-plate .right-bar .dishes-container .list .item .item-image .dish-img {
   padding: 5px 0 5px;
-  width: 100px;
 }
 .dishes-plate .right-bar .dishes-container .list .item .item-info {
-  margin-top: 3px;
   font-size: 15px;
-  border-radius: 100vw 100vw 100vw 100vw;
-  background-color: rgba(166, 21, 21, 0.9843137255);
+  border-radius: 0 0 10px 10px;
+  background-color: #000000;
 }
 .dishes-plate .right-bar .dishes-container .list .item .item-info h4 {
-  font-size: 17px;
+  color: #fff;
+  font-size: 1 rem;
+}
+.dishes-plate .right-bar .dishes-container .list .item .item-info .item-info-btn {
+  border-top: 1px solid rgb(255, 255, 255);
+  width: 100%;
+  color: #fff;
+  font-weight: 700;
+  background-color: #000000;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.dishes-plate .right-bar .dishes-container .list .item .item-info .item-info-btn:hover svg {
+  -webkit-animation: waving 1s ease infinite;
+          animation: waving 1s ease infinite;
+}
+@-webkit-keyframes waving {
+  0% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+@keyframes waving {
+  0% {
+    transform: rotate(30deg);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+.dishes-plate .right-bar .dishes-container .list .item .item-info svg {
+  padding: 0 5px;
 }
 
 .dishModal {
@@ -415,6 +458,10 @@
 }
 .dishModal .right-text {
   width: 50%;
+}
+
+.hide {
+  display: none;
 }
 
 /*--------------Contact SCSS---------------*/
@@ -524,37 +571,108 @@
 
 .footer {
   /* -------------------------Footer--------------------------- */
-  height: 40vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30vh;
+  padding: 30px 0;
+  font-size: 13px;
   box-sizing: border-box;
   text-align: center;
-  padding: 30px 0;
-  background: #263132;
+  background: #161b1b;
   color: #fff;
-  font-family: "Anek Telugu", sans-serif;
+  font-family: "Noto Sans TC", sans-serif;
 }
-.footer h4 {
+.footer .left-box {
+  text-align: left;
+}
+.footer .left-box h4 {
   font-size: 20px;
   margin-bottom: 25px;
   font-weight: 600;
 }
-.footer p {
+.footer .left-box p {
   line-height: 1.5;
 }
-.footer .icons {
+.footer .middle-box img {
+  margin-bottom: 20px;
+}
+.footer .right-box {
+  display: inline-block;
+  margin-left: 14px;
+}
+.footer .right-box .icons {
   margin: 0 13px;
   cursor: pointer;
-  padding: 18px 0;
+  padding: 0;
   font-size: 30px;
 }
-.footer .icons .fa-facebook {
-  color: #2b48ff;
-  margin: 0 13px;
+.footer .right-box .icons a {
+  width: 32px;
+  height: 32px;
+  background: rgba(22, 27, 27, 0.2705882353);
+  display: inline-flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
-.footer .icons .fa-line {
-  color: rgb(21, 184, 21);
-  margin: 0 13px;
+.footer .right-box .icons a::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 0.3s ease-in-out;
+  box-shadow: 0px 0px 20px 1px rgb(255, 168, 168) inset, 0px 0px 10px 1px rgb(255, 255, 255);
 }
-.footer .icons .fa-google {
-  color: red;
-  margin: 0 13px;
+.footer .right-box .icons a:hover::before {
+  transform: scale(1);
+}
+.footer .right-box .icons a svg {
+  width: 60%;
+  z-index: 1;
+  transition: 0.3s ease-in-out;
+}
+.footer .right-box .icons a:hover svg {
+  filter: saturate(100%) invert(0%) sepia(7%) saturate(98%) hue-rotate(346deg) brightness(95%) contrast(86%);
+}
+.footer .right-box .icons .fa-facebook {
+  margin: 0px 6px;
+}
+.footer .right-box .icons .fa-facebook svg {
+  width: 50%;
+  color: rgba(33, 40, 40, 0.9647058824);
+}
+.footer .right-box .icons .fa-facebook::before {
+  background-color: #1601ff;
+  box-shadow: 0px 0px 20px 1px rgb(209, 211, 255) inset, 0px 0px 10px 1px rgb(255, 255, 255);
+}
+.footer .right-box .icons .fa-line svg {
+  color: rgba(33, 40, 40, 0.9647058824);
+}
+.footer .right-box .icons .fa-line::before {
+  box-shadow: 0px 0px 20px 1px rgb(162, 255, 153) inset, 0px 0px 10px 1px rgb(255, 255, 255);
+  background-color: #04ff00;
+}
+.footer .right-box .icons .fa-google {
+  margin: 0px 6px;
+}
+.footer .right-box .icons .fa-google svg {
+  color: rgba(33, 40, 40, 0.9647058824);
+}
+.footer .right-box .icons .fa-google::before {
+  box-shadow: 0px 0px 20px 1px rgb(162, 255, 153) inset, 0px 0px 10px 1px rgb(255, 255, 255);
+  background-color: #fc0000;
+}
+
+@media (max-width: 1370px) {
+  .footer {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }/*# sourceMappingURL=Global.css.map */

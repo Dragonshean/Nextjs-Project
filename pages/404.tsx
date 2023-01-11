@@ -15,7 +15,7 @@ const NotFound = () => {
         setTimeout(() => {
             router.push('/'); //redirect the page to home page
         }, 2000)
-    }, [])
+    }, [router])
 
 
 
@@ -23,8 +23,10 @@ const NotFound = () => {
     return ( 
         <div>
             <Image src={Not404}
+                    priority={true}
                     width={1215}
                     height={1010}
+                    quality={100}
                     style={{objectFit: "cover"}} 
                     alt="404 Not Found"  
                     />

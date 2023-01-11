@@ -29,6 +29,7 @@ export default function Navbar () {
                     height={120}
                     style={{
                     maxWidth: '100%',
+                    width: 'auto',
                     height: 'auto',
                     }} className="MainPageLogo"/>
                 </Link>

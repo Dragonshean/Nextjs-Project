@@ -1,20 +1,22 @@
 import Item from './Item'
-import { DishesListProps, popOutModalProps } from '../../pages/Menu/index';
+import { DishProps, dishesProps, popOutModalProps } from '../../pages/Menu/index';
 
 
 
 
-const List = ({dishes, popOutModal}: DishesListProps & popOutModalProps) => {
+const List = ({ dish, popOutModal }: DishProps & popOutModalProps ) => {
+
+    // console.log("List", dish)
+
     return ( 
         <div className="list">
-            {dishes.map(({ id, name, price_noon, price_night, img }) => (
+            {dish.map(({ id, name, img, file }:dishesProps) => (
                 <Item
                 key={id} 
-                name={name} 
+                name={name}
                 id={id} 
-                price_noon={price_noon} 
-                price_night={price_night} 
                 img={img}
+                file={file}
                 popOutModal={popOutModal}
                 /> 
             ))}
