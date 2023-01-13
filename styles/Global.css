@@ -427,16 +427,16 @@
 }
 
 .dishModal {
-  left: 20%;
+  left: 15%;
   top: 50%;
   position: absolute;
   display: flex;
-  width: 500px;
-  padding: 50px 200px 50px 20px;
+  width: 50rem;
+  padding: 2rem 0rem;
   border-radius: 20px;
   background-color: rgb(255, 255, 255);
   transform: translateY(-50%);
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .dishModal button {
   position: absolute;
@@ -457,7 +457,28 @@
   margin-right: 10px;
 }
 .dishModal .right-text {
-  width: 50%;
+  width: 40%;
+  display: grid;
+  align-content: space-between;
+  justify-items: start;
+}
+.dishModal .right-text span {
+  margin-left: 1rem;
+}
+.dishModal .right-text .right-text-title {
+  font-size: 1.5rem;
+}
+.dishModal .right-text .right-text-desc {
+  text-indent: 1rem;
+}
+.dishModal .right-text .right-text-from {
+  color: #e43c29;
+}
+.dishModal .right-text .right-text-price_noon {
+  color: rgb(22, 196, 109);
+}
+.dishModal .right-text .right-text-price_night {
+  color: rgb(119, 0, 255);
 }
 
 .hide {
@@ -674,5 +695,36 @@
     width: 100%;
     padding-left: 40px;
     padding-right: 40px;
+  }
+}
+/* 超小設備 (手機, 600px 以下螢幕設備) */
+@media only screen and (max-width: 600px) {
+  .dishModal {
+    width: 6rem;
+    padding: 2rem 2rem 2rem 2rem;
+  }
+}
+/* 小設備 (平板電腦和大型手機，600 像素及以上) */
+@media only screen and (min-width: 600px) {
+  .example {
+    background: green;
+  }
+}
+/* 中型設備（平板電腦，768 像素及以上） */
+@media only screen and (min-width: 768px) {
+  .example {
+    background: blue;
+  }
+}
+/* 大型設備（筆記型電腦，992 像素及以上） */
+@media only screen and (min-width: 992px) {
+  .example {
+    background: orange;
+  }
+}
+/* 超大型設備（大型筆記型電腦，1200 像素及以上） */
+@media only screen and (min-width: 1200px) {
+  .example {
+    background: pink;
   }
 }/*# sourceMappingURL=Global.css.map */

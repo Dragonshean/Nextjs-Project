@@ -15,6 +15,8 @@ const Item = ( { id, name, img, file, popOutModal }: dishesProps & popOutModalPr
     const basePath = `/images/${file}/`
     const imagePath = `${basePath}${img}`
 
+    const nowId = parseInt(id); 
+
     // console.log("Item", file)
 
     return (
@@ -37,7 +39,7 @@ const Item = ( { id, name, img, file, popOutModal }: dishesProps & popOutModalPr
           </div>
           <div className='item-info'>
             <h4>{name}</h4>
-            <button className='item-info-btn' key={id} onClick={popOutModal}>
+            <button className='item-info-btn' key={id} onClick={() => {popOutModal(nowId)} }>
               <FontAwesomeIcon className="fa-regular fa-copyright"
                     icon={ faHandPointRight } />
                     食材資訊

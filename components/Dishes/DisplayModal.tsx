@@ -32,7 +32,6 @@ const DisplayModal = ({ details, closeModal }: closeModalProps & DetailsProps) =
                         src={`${basePath}${details.img}`} 
                         width={300} 
                         height={300} 
-                        priority={true}
                         style={{
                         maxWidth: '100%',
                         width:'auto',  
@@ -44,11 +43,23 @@ const DisplayModal = ({ details, closeModal }: closeModalProps & DetailsProps) =
                     />
                 </div>
                 <div className='right-text'>
-                    <h2>{details.name}</h2>
-                    <p>{details.description}</p>
-                    <p>食材原產地 : {details.from}</p>
-                    <p>平日午餐 : NTD$ {details.price_noon}</p>
-                    <p>平日&假日晚餐 : NTD$ {details.price_night}</p>
+                    <h2 className='right-text-title'>{details.name}</h2>
+                    <p className='right-text-desc'>{details.description}</p>
+                    <p>食材原產地 : 
+                        <span className='right-text-from'>
+                            {details.from}
+                        </span>
+                    </p>
+                    <p>平日午餐 :
+                        <span className='right-text-price_noon'>
+                            NTD$ {details.price_noon}
+                        </span>
+                    </p>
+                    <p>平日&假日晚餐 : 
+                        <span className='right-text-price_night'>
+                            NTD$ {details.price_night}
+                        </span>
+                    </p>
                 </div>
                 <button onClick={closeModal}>
                     <FontAwesomeIcon icon={faXmark} />

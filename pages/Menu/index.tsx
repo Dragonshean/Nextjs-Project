@@ -58,10 +58,11 @@ export interface modalProps {
   img: string;
   from: string;
   file: string;
+  details:any;
 }
 
 export type popOutModalProps = {
-  popOutModal: () => void;
+  popOutModal: (id:number) => void;
 };
 export type closeModalProps = {
   closeModal: () => void;

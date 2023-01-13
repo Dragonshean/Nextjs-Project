@@ -22,18 +22,18 @@ const Details = ({ dish, id, modal }: ModalsProps & DishProps & IdProps & popOut
     console.log("id page id", id) 
     console.log("id page modal", modal[parseInt(id)].details) 
 
+    const [ showModal, setShowModal ] = useState(false);
+    const [ Modal, setModal ] = useState({})
+
     const dishItem = modal[parseInt(id)].details
 
-    const [ showModal, setShowModal ] = useState(true);
-    const [ listHighlight, setListHighLight ] = useState(false)
-    const [ Modal, setModal ] = useState(dishItem)
-
-    const modalDetails = Modal[parseInt(id)]
-
+    const popOutModal = (id:number) => {
+        setShowModal(true);
+        setModal(dishItem[id])
+    }
     
     const closeModal = () => {
         setShowModal(false);
-
     };
     
     
@@ -70,6 +70,9 @@ const Details = ({ dish, id, modal }: ModalsProps & DishProps & IdProps & popOut
                         }
                     </ul>
                 </div>
+                {showModal ? (
+                    <DisplayModal details={Modal} closeModal={closeModal} />
+                ) : null}
                 <div className='right-bar'>
                     <h3>餐點介紹</h3>
                     <div className='dishes-container'>
